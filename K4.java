@@ -1,38 +1,16 @@
-class Shape{
-    public void draw() {
-        System.out.println("Drawing a shape");}
-    public void erase(){
-        System.out.println("Erasing a shape");}}
-class Circle extends Shape{
-    @Override
-    public void draw() {
-        System.out.println("Drwaing a circle");}
-    public void erase() {
-        System.out.println("Erasing a circle");}}
-class Triangle extends Shape{
-    @Override
-    public void draw() {
-        System.out.println("Drwaing a triangle");}
-    public void erase() {
-        System.out.println("Erasing a triangle");}}
-class Square extends Shape{
-    @Override
-    public void draw() {
-        System.out.println("Drwaing a square");}
-    public void erase() {
-        System.out.println("Erasing a square");}}
+package pkg1;
+
+import java.util.Scanner;
 
 public class K4 {
-    public static void main(String[] args) {
-        Shape[] shapes=new Shape[3];
-        shapes[0]=new Circle();
-        shapes[1]=new Triangle();
-        shapes[2]=new Square();
-        for(int i=0;i<shapes.length;i++) {
-            shapes[i].draw();
-            shapes[i].erase();
-            System.out.println("---------------");}}}
-        
-    
-    
-    
+        public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+            float tempC;
+                float tempF;
+                System.out.println("Enter the temperature in celcius:");
+                tempC = scanner.nextFloat();
+                tempF=((tempC*9)/5)+32;
+                System.out.println("Temperature in Fahrenheit:"+tempF);
+        }
+
+}
