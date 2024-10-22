@@ -1,52 +1,22 @@
-import java.util.Scanner;
 
-public class J1{
-
-public static void main(String[] args) {
-
-int N = Integer.parseInt(args[0]);
-
-int[][] matrix1 = new int[N][N];
-
-int[][] matrix2 = new int[N][N];
-
-Scanner scanner = new Scanner(System.in);
-
-System.out.println("enter the elements of the first matrix:");
-
-for(int i = 0 ;i<N;i++){
-
-for (int j=0;j<N;j++){
-
-matrix1[i][j]=scanner.nextInt();}}
-
-System.out.println("enter the elements of the second matrix:");
-
-for(int i = 0 ;i<N;i++) {
-
-for (int j = 0; j<N;j++) {
-
-matrix2[i][j]=scanner.nextInt();}}
-int[][] sumMatrix = new int[N][N];
-
-for (int i = 0; i<N; i ++){
-
-for(int j = 0;j<N ;j++){
-
-sumMatrix[i][j] = matrix1[i][j] + matrix2[i][j];}}
-
-System.out.println("the sum of the two matrices is:");
-
-for(int i = 0;i<N;i++) {
-
-for(int j = 0; j<N;j++) {
-
-System.out.print(sumMatrix[i][j]+" ");
+package pkg1;
+class MultiThreadingOne extends Thread{
+        public void run(){
+                try {
+                        System.out.println("Thread "+Thread.currentThread().getName()+" is running");
+                }
+                catch (Exception e) {
+                        System.out.println("Exception is caught");
+                }
+        }
 }
+public class J1 {
+        public static void main(String[] args) {
+                for(int i=0;i<8;i++) {
+                        MultiThreadingOne mt1=new MultiThreadingOne();
+                        mt1.start();
+                }
 
-System.out.println();
-
-}
-}
+        }
 
 }
